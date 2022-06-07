@@ -1,9 +1,11 @@
 {
-    "workbench.colorCustomizations": {
-        "tab.activeBorder": "#007f00",
-        "titleBar.activeBackground": "#007f00",
-        "titleBar.activeForeground": "#ffffff",
-        "statusBar.background": "#007f00",
-        "statusBar.foreground": "#ffffff"
-    }
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "ucm_test",
+            "database": "${workspaceFolder:ucm_test}/db/development.sqlite3"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
 }
