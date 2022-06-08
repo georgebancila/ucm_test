@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Product < ApplicationRecord
-  belongs_to :seller, class_name: 'User', foreign_key: 'seller_id'
+  belongs_to :seller, class_name: 'User'
   validates :productName, presence: true, uniqueness: true
   validates :amountAvailable, presence: true
   validates :cost, presence: true

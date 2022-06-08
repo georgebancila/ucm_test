@@ -137,6 +137,10 @@ RSpec.describe ProductsController, type: :controller do
         subject
         expect(response).to have_http_status(:no_content)
       end
+
+      it 'deletes a product' do
+        expect { subject }.to change { Product.count }.by(-1)
+      end
     end
 
     context 'when product does not exist' do

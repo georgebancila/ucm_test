@@ -22,7 +22,7 @@ RSpec.describe UsersController, type: :controller do
     let(:username) { 'test_user' }
     let(:deposit) { 50 }
     let(:password) { 'test_password' }
-    let(:payload) { { username: username, deposit: deposit, role: role, password: password, role: role } }
+    let(:payload) { { username: username, deposit: deposit, role: role, password: password } }
 
     subject { post :create, params: payload }
 
@@ -126,6 +126,10 @@ RSpec.describe UsersController, type: :controller do
       it 'returns no_content status' do
         subject
         expect(response).to have_http_status(:no_content)
+      end
+
+      it 'deletes a user' do
+        expect { subject }.to change { User.count }.by(-1)
       end
     end
 

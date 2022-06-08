@@ -35,10 +35,10 @@ class UsersController < ApplicationController
 
   private
 
-    def check_current_user
-      if params[:id].to_i != current_user.id
-        render json: { error: 'You are allowed to see/edit/delete only your user' }, status: :unauthorized
-        false
-      end
-    end
+  def check_current_user
+    return if params[:id].to_i == current_user.id
+
+    render json: { error: 'You are allowed to see/edit/delete only your user' }, status: :unauthorized
+    false
+  end
 end

@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_secure_password
   ROLES = { buyer: 'buyer', seller: 'seller' }.freeze
 
-  has_many :products, dependent: :destroy, foreign_key: 'seller_id'
+  has_many :products, dependent: :destroy, foreign_key: 'seller_id', inverse_of: :seller
 
   attribute :deposit, default: 0
   validate :valid_cost
