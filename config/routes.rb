@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post '/buy', to: 'purchases#buy'
   post '/deposit', to: 'purchases#deposit'
   post '/reset', to: 'purchases#reset'
-  resources :users, only: [:create]
+  resources :users, only: %i[create update destroy show]
   resources :products, only: %i[index create update destroy show]
   post '/login', to: 'authentication#login'
   post '/logout/all', to: 'authentication#logout_all'

@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe AuthenticationController, type: :controller do
   describe '#login' do
-    let(:password) { 'test' }
+    let(:password) { 'testsix' }
     let(:username) { 'rich_user' }
     let(:params) { { username: username, password: password } }
 
@@ -26,7 +26,7 @@ RSpec.describe AuthenticationController, type: :controller do
       end
 
       context 'when user credentials are incorrect' do
-        let!(:user) { create(:user, username: username, password: 'wrong') }
+        let!(:user) { create(:user, username: username, password: 'wrongsix') }
         it 'returns unauthorized status' do
           subject
           expect(response).to have_http_status(:unauthorized)

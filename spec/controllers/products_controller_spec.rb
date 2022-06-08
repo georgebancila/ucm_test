@@ -113,10 +113,6 @@ RSpec.describe ProductsController, type: :controller do
 
     subject { patch :update, params: payload }
 
-    after do
-      product.reload
-    end
-
     it 'updates the name of the product' do
       subject
       product.reload

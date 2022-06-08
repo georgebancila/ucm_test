@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
     @product.save!
     render json: @product, status: :accepted
   rescue ActiveRecord::RecordInvalid => e
-    render json: e.message, status: :unprocessable_entity
+    render json: { error: e.message }, status: :unprocessable_entity
   end
 
   def destroy

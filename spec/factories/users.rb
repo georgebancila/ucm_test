@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :user do
     username { 'buyer_user' }
-    password { 'test' }
+    password { 'test10' }
     deposit { 10 }
     role { 'buyer' }
   end
