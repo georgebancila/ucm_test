@@ -14,7 +14,9 @@ module AuthConcern
       header = header.split.last if header
       @decoded = jwt_decode(header)
       current_user
-    rescue StandardError
+    rescue JWT::ExpiredSignature
+      render json: { error: 'Token expired, issue another' }, status: :unauthorized
+    rescue JWT::DecodeError
       render json: { error: 'Token is not valid' }, status: :unauthorized
     end
 

@@ -13,7 +13,7 @@ class AuthenticationController < ApplicationController
         render json: { error: 'unauthorized' }, status: :unauthorized
       end
     else
-      render json: { error: 'not_found' }, status: :not_found
+      render json: { error: 'There is no user with the given username' }, status: :not_found
     end
   end
 
