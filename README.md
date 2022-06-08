@@ -7,15 +7,27 @@ Things you may want to cover:
 
 * Ruby version
 
+ruby-3.0.2
+
 * System dependencies
+
+rails installed
 
 * Configuration
 
 * Database creation
 
+Run commands:
+
+`rails db:create`
+`rails db:migrate`
+`rails db:seed`
+
 * Database initialization
 
 * How to run the test suite
+
+Run `rspec` command in a console.
 
 * Services (job queues, cache servers, search engines, etc.)
 
